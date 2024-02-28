@@ -19,7 +19,7 @@ document.querySelector('button').addEventListener('click', function () {
     let boxElements= document.getElementsByClassName('box')
     //console.log(boxElements);
     
-    for(let i=0; i<boxElements.length ; i++){
+    for(let i=1; i<boxElements.length ; i++){
         let boxElement =boxElements[i];
         console.log(boxElement);
         
