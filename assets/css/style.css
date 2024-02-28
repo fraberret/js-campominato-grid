@@ -1,0 +1,22 @@
+#container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+
+
+}
+
+.box{
+    width: calc(100%/11);
+    aspect-ratio: 1;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.green{
+    background-color: green;
+}
