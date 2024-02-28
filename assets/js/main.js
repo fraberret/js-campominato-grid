@@ -14,7 +14,7 @@ function difficultChooser(difficult) {
         document.getElementById('level').remove()
         document.querySelector('button').remove()
 
-        document.getElementById('title').innerHTML = "Difficoltà 1"
+        document.getElementById('title').innerHTML = "Facile"
         for (let i = 1; i <= 100; i++) {
 
             document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box easy">${i}</div>`)
@@ -24,7 +24,7 @@ function difficultChooser(difficult) {
         document.getElementById('level').remove()
         document.querySelector('button').remove()
 
-        document.getElementById('title').innerHTML = "Difficoltà 2"
+        document.getElementById('title').innerHTML = "Medio"
         for (let i = 1; i <= 81; i++) {
             document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box medium">${i}</div>`)
 
@@ -33,7 +33,7 @@ function difficultChooser(difficult) {
         document.getElementById('level').remove()
         document.querySelector('button').remove()
 
-        document.getElementById('title').innerHTML = "Difficoltà 3"
+        document.getElementById('title').innerHTML = "Difficile"
         for (let i = 1; i <= 49; i++) {
             document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box difficult">${i}</div>`)
 

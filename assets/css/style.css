@@ -41,7 +41,8 @@ body{
 }
 
 .green{
-    background-color: green;
+    background-color: rgb(13, 35, 194);
+    color: white;
 }
 
 h1{
