@@ -5,14 +5,9 @@ Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 */
 
+function difficultChooser(difficult) {
 
-
-document.querySelector('button').addEventListener('click', function () {
-
-   
-    let userChoose = document.getElementById('level').value
-   
-    if (userChoose === "easy") {
+    if (difficult === "easy") {
         document.getElementById('level').remove()
         document.querySelector('button').remove()
     
@@ -22,7 +17,7 @@ document.querySelector('button').addEventListener('click', function () {
             document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box easy">${i}</div>`)
 
         }
-    }else if(userChoose==="medium"){
+    }else if(difficult==="medium"){
         document.getElementById('level').remove()
         document.querySelector('button').remove()
     
@@ -31,7 +26,7 @@ document.querySelector('button').addEventListener('click', function () {
             document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box medium">${i}</div>`)
 
         }
-    }else if ((userChoose==="difficult")){
+    }else if ((difficult==="difficult")){
         document.getElementById('level').remove()
         document.querySelector('button').remove()
     
@@ -40,6 +35,52 @@ document.querySelector('button').addEventListener('click', function () {
             document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box difficult">${i}</div>`)
 
         }
+    }
+    
+    
+}
+
+
+
+document.querySelector('button').addEventListener('click', function () {
+
+   
+    let userChoose = document.getElementById('level').value
+   
+    if (userChoose === "easy") {
+
+        difficultChooser("easy")
+
+        /* document.getElementById('level').remove()
+        document.querySelector('button').remove()
+    
+        document.getElementById('title').innerHTML="Difficoltà 1"
+        for (let i = 1; i <= 100; i++) {
+            
+            document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box easy">${i}</div>`)
+
+        } */
+    }else if(userChoose==="medium"){
+difficultChooser("medium")
+
+        /* document.getElementById('level').remove()
+        document.querySelector('button').remove()
+    
+        document.getElementById('title').innerHTML="Difficoltà 2"
+        for (let i = 1; i <= 81; i++) {
+            document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box medium">${i}</div>`)
+
+        } */
+    }else if ((userChoose==="difficult")){
+        difficultChooser("difficult")
+        /* document.getElementById('level').remove()
+        document.querySelector('button').remove()
+    
+        document.getElementById('title').innerHTML="Difficoltà 3"
+        for (let i = 1; i <= 49; i++) {
+            document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box difficult">${i}</div>`)
+
+        } */
     }else{
         alert('Scegli una difficoltà')
     }
