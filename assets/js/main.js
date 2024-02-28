@@ -8,29 +8,60 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 
 document.querySelector('button').addEventListener('click', function () {
-    
-    document.querySelector('button').remove()
 
-    for(let i= 1; i<=100; i++){
-        document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box">${i}</div>`)
-        
+   
+    let userChoose = document.getElementById('level').value
+   
+    if (userChoose === "easy") {
+        document.getElementById('level').remove()
+        document.querySelector('button').remove()
+    
+        document.getElementById('title').innerHTML="Difficoltà 1"
+        for (let i = 1; i <= 100; i++) {
+            
+            document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box easy">${i}</div>`)
+
+        }
+    }else if(userChoose==="medium"){
+        document.getElementById('level').remove()
+        document.querySelector('button').remove()
+    
+        document.getElementById('title').innerHTML="Difficoltà 2"
+        for (let i = 1; i <= 81; i++) {
+            document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box medium">${i}</div>`)
+
+        }
+    }else if ((userChoose==="difficult")){
+        document.getElementById('level').remove()
+        document.querySelector('button').remove()
+    
+        document.getElementById('title').innerHTML="Difficoltà 3"
+        for (let i = 1; i <= 49; i++) {
+            document.getElementById('container').insertAdjacentHTML('beforeend', `<div class="box difficult">${i}</div>`)
+
+        }
+    }else{
+        alert('Scegli una difficoltà')
     }
 
-    let boxElements= document.getElementsByClassName('box')
+
+
+
+    let boxElements = document.getElementsByClassName('box')
     //console.log(boxElements);
-    
-    for(let i=0; i<boxElements.length ; i++){
-        let boxElement =boxElements[i];
-        console.log(boxElement);
-        
+
+    for (let i = 0; i < boxElements.length; i++) {
+        let boxElement = boxElements[i];
+        //console.log(boxElement);
+
         boxElement.addEventListener('click', function () {
             boxElement.classList.toggle('green')
-            
-            console.log(i+1);
-            
+
+            console.log(i + 1);
+
         })
     }
-    
+
 
 })
 

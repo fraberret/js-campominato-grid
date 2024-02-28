@@ -1,3 +1,7 @@
+body{
+    height: 100vh;
+}
+
 #container{
     width: 80%;
     display: flex;
@@ -8,7 +12,6 @@
 }
 
 .box{
-    width: calc(100%/11);
     aspect-ratio: 1;
     background-color: red;
     display: flex;
@@ -17,6 +20,26 @@
     border: 2px solid black;
 }
 
+.easy{
+    width: calc(100%/10);
+    
+    
+}
+
+.medium{
+    width: calc(100%/9);
+    
+}
+
+.difficult{
+    width: calc(100%/7);
+}
+
 .green{
     background-color: green;
+}
+
+h1{
+    text-align: center;
+    color: white;
 }

@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    <button>Clicca qui</button>
-    <div id="container"></div>
+
+<body id="body" class="bg-dark">
+    <h1 id="title">Gioco Del Campo Minato</h1>
+
+
+
+    <div id="container" class="bg-light p-4">
+        <div class="w-100 d-flex justify-content-center">
+            <select class="w-25 form-select" aria-label="Default select example" id="level">
+                <option value="">Scegli la difficoltà....</option>
+                <option value="easy">Difficoltà 1</option>
+                <option value="medium">Difficoltà 2</option>
+                <option value="difficult">Difficoltà 3</option>
+            </select>
+            <button class="btn btn-outline-primary">Gioca</button>
+        </div>
+    </div>
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
