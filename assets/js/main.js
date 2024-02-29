@@ -21,6 +21,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una fungo - la cella si colora di rosso e la partita termina. Altrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle.
 
 
+
 ### Milestone 3
 
 La partita termina quando il giocatore clicca su una fungo o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono funghi).
@@ -94,6 +95,9 @@ function difficultChooser(difficult) {
     }
 }
 
+
+
+
 //al click si genera una griglia in base alla difficoltà scelta
 document.querySelector('button').addEventListener('click', function () {
 
@@ -103,17 +107,25 @@ document.querySelector('button').addEventListener('click', function () {
         difficultChooser("easy")
         let mushrooms = (mushroomsGenerator(100));
         let boxElements = document.getElementsByClassName('box')
-        
-        
         console.log(mushrooms);
+       let counter=0
         
         for (let i = 0; i < boxElements.length; i++) {
             let boxElement = boxElements[i];
             //console.log(boxElement);
             
             //al click della cella, si colora
-            boxElement.addEventListener('click', function click() {
+            boxElement.addEventListener('click', function () {
                 boxElement.classList.toggle('green')
+                if (!this.clicked  ) {
+                    counter++;
+                    this.clicked = true; // Imposta il flag a true per indicare che è già stato cliccato
+                }
+                
+                if (counter==100-16) {
+                    alert('hai vinto')
+                }
+
 
                 let cellNumber = i + 1
                 console.log(cellNumber);
@@ -121,9 +133,12 @@ document.querySelector('button').addEventListener('click', function () {
                     boxElement.innerHTML =`<i class="fa-solid fa-poo"></i>`
                     boxElement.classList.remove('green')
                     boxElement.classList.add('wrong')
-                    
+                    alert(`Hai fatto un totale di ${counter} punti`)
                 }
+                
+                console.log(counter);
             })
+            
         }
     }
     else if (userChoose === "medium") {
