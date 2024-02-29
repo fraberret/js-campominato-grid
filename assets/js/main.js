@@ -95,13 +95,7 @@ function difficultChooser(difficult) {
     }
 }
 
-
-
-let counter=0
-
-//al click si genera una griglia in base alla difficoltà scelta
-document.querySelector('button').addEventListener('click', function () {
-
+function colorBox() {
     let userChoose = document.getElementById('level').value
 
     if (userChoose === "easy") {
@@ -116,7 +110,7 @@ document.querySelector('button').addEventListener('click', function () {
             //console.log(boxElement);
             
             //al click della cella, si colora
-            boxElement.addEventListener('click', function () {
+            boxElement.addEventListener('click', function colorBox  () {
                 boxElement.classList.toggle('green')
                 
                 if (!this.clicked  ) {
@@ -136,6 +130,7 @@ document.querySelector('button').addEventListener('click', function () {
                     boxElement.classList.remove('green')
                     boxElement.classList.add('wrong')
                     alert(`Hai fatto un totale di ${counter -1} punti`)
+                    boxElement.removeEventListener('click', colorBox)
                 }
                 
                 console.log(counter);
@@ -203,7 +198,117 @@ document.querySelector('button').addEventListener('click', function () {
     }
 
 
-})
+    
+}
+
+let counter=0
+
+//al click si genera una griglia in base alla difficoltà scelta
+document.querySelector('button').addEventListener('click', colorBox)
+
+    /* let userChoose = document.getElementById('level').value
+
+    if (userChoose === "easy") {
+        difficultChooser("easy")
+        let mushrooms = (mushroomsGenerator(100));
+        let boxElements = document.getElementsByClassName('box')
+        console.log(mushrooms);
+       
+        
+        for (let i = 0; i < boxElements.length; i++) {
+            let boxElement = boxElements[i];
+            //console.log(boxElement);
+            
+            //al click della cella, si colora
+            boxElement.addEventListener('click', function colorBox  () {
+                boxElement.classList.toggle('green')
+                
+                if (!this.clicked  ) {
+                    counter++;
+                    this.clicked = true; // Imposta il flag a true per indicare che è già stato cliccato
+                }
+                
+                if (counter==100-16) {
+                    alert('hai vinto')
+                }
+
+
+                let cellNumber = i + 1
+                console.log(cellNumber);
+                if (mushrooms.includes(cellNumber)) {
+                    boxElement.innerHTML =`<i class="fa-solid fa-poo"></i>`
+                    boxElement.classList.remove('green')
+                    boxElement.classList.add('wrong')
+                    alert(`Hai fatto un totale di ${counter -1} punti`)
+                    boxElement.removeEventListener('click',colorBox)
+                }
+                
+                console.log(counter);
+            })
+            
+        }
+    }
+    else if (userChoose === "medium") {
+        difficultChooser("medium")
+        let mushrooms = (mushroomsGenerator(81));
+        let boxElements = document.getElementsByClassName('box')
+        
+        
+        console.log(mushrooms);
+        
+        for (let i = 0; i < boxElements.length; i++) {
+            let boxElement = boxElements[i];
+            //console.log(boxElement);
+            
+            //al click della cella, si colora
+            boxElement.addEventListener('click', function click() {
+                boxElement.classList.toggle('green')
+
+                let cellNumber = i + 1
+                console.log(cellNumber);
+                if (mushrooms.includes(cellNumber)) {
+                    boxElement.innerHTML =`<i class="fa-solid fa-poo"></i>`
+                    boxElement.classList.remove('green')
+                    boxElement.classList.add('wrong')
+                    
+                }
+            })
+        }
+    }
+    else if ((userChoose === "difficult")) {
+        difficultChooser("difficult")
+        let mushrooms = (mushroomsGenerator(81));
+        let boxElements = document.getElementsByClassName('box')
+        
+        
+        console.log(mushrooms);
+        
+        for (let i = 0; i < boxElements.length; i++) {
+            let boxElement = boxElements[i];
+            //console.log(boxElement);
+            
+            //al click della cella, si colora
+            boxElement.addEventListener('click', function click() {
+                boxElement.classList.toggle('green')
+
+                let cellNumber = i + 1
+                console.log(cellNumber);
+                if (mushrooms.includes(cellNumber)) {
+                    boxElement.innerHTML =`<i class="fa-solid fa-poo"></i>`
+                    boxElement.classList.remove('green')
+                    boxElement.classList.add('wrong')
+                    
+                }
+            })
+        }
+
+    }
+    else {
+        alert('Scegli una difficoltà')
+    }
+
+ */
+
 
 
 
