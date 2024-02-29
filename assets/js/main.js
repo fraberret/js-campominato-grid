@@ -97,14 +97,22 @@ function getRndNumber(min, max) {
 
   //Il computer deve generare 16 numeri casuali
 
-  let mushroomsArray=[]
+  
+ 
+
+  function mushroomsGenerator(cellNumber) {
+    let mushroomsArray=[]
 
   while (mushroomsArray.length<16 ) {
     
-    let randomNumber=getRndNumber(1,100)
+    let randomNumber=getRndNumber(1, cellNumber)
 
     if (!mushroomsArray.includes(randomNumber)) {
         mushroomsArray.push(randomNumber)
     }
+    
   }
-  console.log(mushroomsArray);
+  return mushroomsArray
+  }
+
+console.log(mushroomsGenerator(81));
