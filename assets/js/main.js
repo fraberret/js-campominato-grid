@@ -97,6 +97,7 @@ function difficultChooser(difficult) {
 
 
 
+let counter=0
 
 //al click si genera una griglia in base alla difficoltà scelta
 document.querySelector('button').addEventListener('click', function () {
@@ -108,7 +109,7 @@ document.querySelector('button').addEventListener('click', function () {
         let mushrooms = (mushroomsGenerator(100));
         let boxElements = document.getElementsByClassName('box')
         console.log(mushrooms);
-       let counter=0
+       
         
         for (let i = 0; i < boxElements.length; i++) {
             let boxElement = boxElements[i];
@@ -117,6 +118,7 @@ document.querySelector('button').addEventListener('click', function () {
             //al click della cella, si colora
             boxElement.addEventListener('click', function () {
                 boxElement.classList.toggle('green')
+                
                 if (!this.clicked  ) {
                     counter++;
                     this.clicked = true; // Imposta il flag a true per indicare che è già stato cliccato
@@ -133,7 +135,7 @@ document.querySelector('button').addEventListener('click', function () {
                     boxElement.innerHTML =`<i class="fa-solid fa-poo"></i>`
                     boxElement.classList.remove('green')
                     boxElement.classList.add('wrong')
-                    alert(`Hai fatto un totale di ${counter} punti`)
+                    alert(`Hai fatto un totale di ${counter -1} punti`)
                 }
                 
                 console.log(counter);
