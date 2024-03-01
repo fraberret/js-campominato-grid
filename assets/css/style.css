@@ -1,22 +1,25 @@
-body{
-    background-image: linear-gradient(to right, red , rgb(23, 44, 118));
-    width: 70%;
+#body {
+    background-image: linear-gradient(to right, red, rgb(23, 44, 118));
+   width: 70%;
     height: 70%;
     margin: auto;
+    position: relative;
+
 }
 
-#container{
-    width: 80%;
+#container {
+
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    
-    
+
+
 
 
 }
 
-.box{
+.box {
     aspect-ratio: 1;
     background-color: orange;
     display: flex;
@@ -25,32 +28,54 @@ body{
     border: 2px solid black;
 }
 
-.easy{
+.easy {
     width: calc(100%/10);
-    
-    
+
+
 }
 
-.medium{
+.medium {
     width: calc(100%/9);
-    
+
 }
 
-.difficult{
+.difficult {
     width: calc(100%/7);
 }
 
-.green{
+.green {
     background-color: rgb(13, 35, 194);
     color: white;
 }
 
-h1{
+h1 {
     text-align: center;
     color: white;
 }
 
-.wrong{
+.wrong {
     background-color: red;
     color: rgb(255, 255, 255);
+}
+
+.gameover {
+    background-color: rgba(255, 4, 4, 0.903);
+    position: absolute;
+    color: black;
+    width: 800px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid black;
+    text-align: center;
+    
+}
+
+.bg_green{
+    background-color: rgba(5, 154, 5, 0.748);
 }

@@ -57,7 +57,7 @@ function mushroomsGenerator(cellNumber) {
 
     while (mushroomsArray.length < 16) {
 
-        let randomNumber = getRndNumber(1, cellNumber)
+        let randomNumber = getRndNumber(0, cellNumber)
 
         if (!mushroomsArray.includes(randomNumber)) {
             mushroomsArray.push(randomNumber)
@@ -126,6 +126,7 @@ document.querySelector('button').addEventListener('click', function () {
 
                 if (counter == 100 - 16) {
                     alert('hai vinto')
+                    document.getElementById('body').innerHTML+=`<div class="gameover bg_green rounded"><h1 class="text-dark">YOU WIN</h1><p>Hai fatto un totale di ${counter - 1} punti</p><p>To play another game, refresh the page</p></div> `
                 }
                 
                 let cellNumber = i + 1
@@ -136,8 +137,8 @@ document.querySelector('button').addEventListener('click', function () {
                     boxElement.innerHTML = `<i class="fa-solid fa-poo"></i>`
                     boxElement.classList.remove('green')
                     boxElement.classList.add('wrong')
-                    alert(`Hai fatto un totale di ${counter - 1} punti`)
-                    boxElement.removeEventListener('click', colorBox)
+                    
+                    document.getElementById('body').innerHTML+=`<div class="gameover rounded"><h1 class="text-dark">YOU LOOSE</h1><p>Hai fatto un totale di ${counter - 1} punti</p><p>To play another game, refresh the page</p></div> `
                 }
 
                 
@@ -171,6 +172,7 @@ document.querySelector('button').addEventListener('click', function () {
 
                 if (counter == 81 - 16) {
                     alert('hai vinto')
+                    document.getElementById('body').innerHTML+=`<div class="gameover bg_green rounded"><h1 class="text-dark">YOU WIN</h1><p>Hai fatto un totale di ${counter - 1} punti</p><p>To play another game, refresh the page</p></div> `
                 }
                 
                 let cellNumber = i + 1
@@ -181,8 +183,8 @@ document.querySelector('button').addEventListener('click', function () {
                     boxElement.innerHTML = `<i class="fa-solid fa-poo"></i>`
                     boxElement.classList.remove('green')
                     boxElement.classList.add('wrong')
-                    alert(`Hai fatto un totale di ${counter - 1} punti`)
-                    boxElement.removeEventListener('click', colorBox)
+                    
+                    document.getElementById('body').innerHTML+=`<div class="gameover rounded"><h1 class="text-dark">YOU LOOSE</h1><p>Hai fatto un totale di ${counter - 1} punti</p><p>To play another game, refresh the page</p></div> `
                 }
 
                 
@@ -190,6 +192,7 @@ document.querySelector('button').addEventListener('click', function () {
                 
                 console.log(counter);
             })
+
         }
     }
     else if ((userChoose === "difficult")) {
@@ -215,6 +218,7 @@ document.querySelector('button').addEventListener('click', function () {
 
                 if (counter == 49 - 16) {
                     alert('hai vinto')
+                    document.getElementById('body').innerHTML+=`<div class="gameover bg_green rounded"><h1 class="text-dark">YOU WIN</h1><p>Hai fatto un totale di ${counter - 1} punti</p><p>To play another game, refresh the page</p></div> `
                 }
                 
                 let cellNumber = i + 1
@@ -225,8 +229,8 @@ document.querySelector('button').addEventListener('click', function () {
                     boxElement.innerHTML = `<i class="fa-solid fa-poo"></i>`
                     boxElement.classList.remove('green')
                     boxElement.classList.add('wrong')
-                    alert(`Hai fatto un totale di ${counter - 1} punti`)
-                    boxElement.removeEventListener('click', colorBox)
+                    
+                    document.getElementById('body').innerHTML+=`<div class="gameover rounded"><h1 class="text-dark">YOU LOOSE</h1><p>Hai fatto un totale di ${counter - 1} punti</p><p>To play another game, refresh the page</p></div> `
                 }
 
                 
@@ -234,6 +238,7 @@ document.querySelector('button').addEventListener('click', function () {
                 
                 console.log(counter);
             })
+
         }
 
     }
